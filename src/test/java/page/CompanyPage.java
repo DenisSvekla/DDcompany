@@ -1,26 +1,26 @@
 package page;
 
 import baseEntities.BasePage;
+import org.openqa.selenium.WebDriver;
 import utils.UIEndpoints;
 
 import static com.codeborne.selenide.Selenide.open;
 
-public class LoginRegistrationPage extends BasePage {
+public class CompanyPage extends BasePage {
 
-
-    public LoginRegistrationPage() {
+    public CompanyPage() {
         super(false);
     }
 
-    public LoginRegistrationPage(boolean openPageByUrl) {
+    public CompanyPage(boolean openPageByUrl) {
         super(openPageByUrl);
     }
 
     @Override
     protected void openPage() {
-        open(UIEndpoints.GET_LOGIN_REGISTRATION);
-    }
+        open(UIEndpoints.GET_ALL_COMPANY);
 
+    }
 
     @Override
     protected boolean isPageOpened() {
