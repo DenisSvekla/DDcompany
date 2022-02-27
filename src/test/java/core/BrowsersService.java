@@ -20,7 +20,7 @@ public class BrowsersService {
                 Configuration.browser = "chrome";
                 //Configuration.startMaximized = false;
                 Configuration.fastSetValue = true;
-                Configuration.headless = true;
+                Configuration.headless = false;
                 Configuration.timeout = 8000;
                 break;
 

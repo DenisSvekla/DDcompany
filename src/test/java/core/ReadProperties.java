@@ -26,6 +26,8 @@ public class ReadProperties {
 
     public static String getPassword () { return properties.getProperty("password");}
 
+    public static int getTimeOut () { return Integer.parseInt(properties.getProperty("timeout"));}
+
     public static String getBrowserName() {
         return properties.getProperty("browser");
     }
