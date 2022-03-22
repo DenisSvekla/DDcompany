@@ -1,28 +1,34 @@
 package baseEntities;
 
+
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.logevents.SelenideLogger;
 import core.BrowsersService;
-import core.ReadProperties;
 import io.qameta.allure.selenide.AllureSelenide;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
+import steps.CompanySteps;
 
 public class BaseTest {
 
-    BrowsersService browsersService;
+    protected BrowsersService browsersService;
+    protected CompanySteps companySteps;
 
-    @BeforeMethod
+    @BeforeTest
     public void setUp() {
+        SelenideLogger.addListener("AllureSelenide", new AllureSelenide()
+        .screenshots(true)
+        .savePageSource(false));
+
 
         browsersService = new BrowsersService();
+        companySteps = new CompanySteps();
 
     }
 
-    @AfterMethod
-    public void drop () {
+    @AfterTest
+    public void drop() {
 
         Selenide.closeWebDriver();
 

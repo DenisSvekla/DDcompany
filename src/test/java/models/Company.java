@@ -1,16 +1,18 @@
 package models;
 
-import com.google.gson.annotations.SerializedName;
-import enums.TypeOfCompany;
 
+import lombok.Builder;
+import lombok.Data;
+
+@Data
+@Builder
 public class Company {
     private String name;
-    private TypeOfCompany typeOfCompany;
     private String INN;
     private String OGRN;
     private String KPP;
-    private int phone;
+    private String phone;
     private String address;
-    private User user;
+
 
 }

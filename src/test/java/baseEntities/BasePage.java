@@ -8,11 +8,11 @@ public abstract class BasePage {
 
     protected String BASE_URL;
 
-    public BasePage(WebDriver driver) {
+    public BasePage () {
         this(false);
     }
 
-    public BasePage(boolean openPageByUrl) {
+    public BasePage (boolean openPageByUrl) {
 
         this.BASE_URL = Configuration.baseUrl = ReadProperties.getUrl();
 

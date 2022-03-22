@@ -22,6 +22,7 @@ public class BrowsersService {
                 Configuration.fastSetValue = true;
                 Configuration.headless = false;
                 Configuration.timeout = 8000;
+                Configuration.reportsFolder = "target/allure-results";
                 break;
 
             case "firefox":
