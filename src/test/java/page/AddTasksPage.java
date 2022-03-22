@@ -10,7 +10,7 @@ import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 
 public class AddTasksPage extends BasePage {
-    private By NAME_TASK_FIELD = By.name("name");
+    private By NAME_TASK_FIELD = By.name("name");/
     private By DESCRIPTION_TASK_PAGE = By.name("description");
     private By ADD_TASK_COMPANY = By.name(".btn-submit");
 
