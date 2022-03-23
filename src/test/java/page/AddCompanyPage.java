@@ -38,10 +38,7 @@ public class AddCompanyPage extends BasePage {
 
     }
 
-    @Override
-    protected boolean isPageOpened() {
-        return false;
-    }
+
 
     public SelenideElement getNameCompanyField () {return $(NAME_COMPANY_FIELD);}
     public SelenideElement getTypeCompanyField () {return $(TYPE_COMPANY);}

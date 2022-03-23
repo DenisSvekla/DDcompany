@@ -14,6 +14,8 @@ public class CompaniesPage extends BasePage {
 
     private By ADD_COMPANY_BUTTON = By.cssSelector(".btn-warning");
     private By DELETE_COMPANY_BUTTON = By.cssSelector("input[value='Удалить']");
+    private By DELETE_COMPANY_BUTTOdN = By.xpath("(//*[@class = 'btn btn-danger'])[2]");
+
 
 
 
@@ -32,16 +34,13 @@ public class CompaniesPage extends BasePage {
 
     }
 
-    @Override
-    protected boolean isPageOpened() {
-        return false;
-    }
+
 
     public SelenideElement getAddCompanyButton () { return $(ADD_COMPANY_BUTTON);}
-    public SelenideElement getDeleteCompanyButton () { return $(DELETE_COMPANY_BUTTON);}
+    public SelenideElement getDeleteCompanyButton () { return $(DELETE_COMPANY_BUTTOdN);}
 
     public SelenideElement getAnyNameCompany(String nameCompany) {
-        return $("//*[contains(@href, '/companys/view/') and text()='"+ nameCompany +"']");
+        return $(By.xpath("//*[contains(@href, '/companys/view/') and text()='"+ nameCompany +"']"));
 
         }
     public SelenideElement getDeleteCompanyButton (String nameCompany) {

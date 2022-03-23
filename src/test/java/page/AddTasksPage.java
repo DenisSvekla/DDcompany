@@ -28,10 +28,7 @@ public class AddTasksPage extends BasePage {
         open(UIEndpoints.GET_ADD_TASK);
     }
 
-    @Override
-    protected boolean isPageOpened() {
-        return false;
-    }
+
     public SelenideElement getNameTaskField() {
         return $(NAME_TASK_FIELD);
     }

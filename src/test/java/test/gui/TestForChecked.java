@@ -29,7 +29,6 @@ public class TestForChecked extends BaseTest {
     public void test() {
         setUps();
         LoginRegistrationPage loginRegistrationPage = new LoginRegistrationPage(true);
-        $(By.name("login")).shouldBe(Condition.visible);
         loginRegistrationPage.getEmailFieldLogin().val(ReadProperties.getEmail());
         loginRegistrationPage.getPasswordFieldLogin().val(ReadProperties.getPassword());
         loginRegistrationPage.getLoginButton().click();

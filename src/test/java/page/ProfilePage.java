@@ -30,10 +30,7 @@ public class ProfilePage extends BasePage {
         open(UIEndpoints.GET_PROFILE_USER);
     }
 
-    @Override
-    protected boolean isPageOpened() {
-        return false;
-    }
+
 
     public SelenideElement getSelectFileButton() {
         return $(SELECT_FILE_BUTTON);

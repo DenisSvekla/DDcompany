@@ -10,9 +10,9 @@ public class CompanySteps  {
     private CompaniesPage companiesPage = new CompaniesPage();
     private AddCompanyPage addCompanyPage;
 
-    @Step("добавляем компанию")
+
     public CompaniesPage addCompany (Company company) {
-        addCompanyPage = new AddCompanyPage();
+        addCompanyPage = new AddCompanyPage(false);
         addCompanyPage.getNameCompanyField().val(company.getName());
         addCompanyPage.getInnField().val(company.getINN());
         addCompanyPage.getOgrnField().val(company.getOGRN());
