@@ -13,7 +13,7 @@ public class LoginRegistrationPage extends BasePage {
 
     private By EMAIL_FIELD_LOGIN = By.name("login");
     private By PASSWORD_FIELD_LOGIN = By.name("password");
-    private By LOGIN_BUTTON = By.cssSelector("input[value='Авторизоваться']");
+    private By LOGIN_BUTTON = By.xpath("//input[@value='Авторизоваться']");
 
 
 
