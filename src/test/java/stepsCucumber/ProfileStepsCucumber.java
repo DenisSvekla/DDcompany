@@ -10,10 +10,11 @@ import page.ProfilePage;
 import java.io.File;
 
 public class ProfileStepsCucumber extends BaseTest {
+
     ProfilePage profilePage;
 
     @Given("openProfile")
-    public void openBrowserAndLogin() {
+    public void openProfile() {
         profilePage = new ProfilePage(true);
 
     }

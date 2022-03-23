@@ -7,12 +7,14 @@ import io.qameta.allure.Description;
 import io.qameta.allure.Issue;
 import models.Company;
 import models.Task;
+import org.checkerframework.checker.units.qual.C;
 import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import page.CompaniesPage;
 import page.LoginRegistrationPage;
 import page.ProfilePage;
+import steps.CompanySteps;
 
 import java.io.File;
 
@@ -34,6 +36,7 @@ public class TestForChecked extends BaseTest {
         loginRegistrationPage.getLoginButton().click();
         CompaniesPage companiesPage = new CompaniesPage(true);
         companiesPage.getAddCompanyButton().click();
+        CompanySteps companySteps = new CompanySteps();
         companySteps.addCompany(company);
         companySteps.deleteCompany(company);
         ProfilePage profilePage = new ProfilePage(true);

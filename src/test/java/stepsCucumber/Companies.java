@@ -14,8 +14,11 @@ import steps.CompanySteps;
 
 
 public class Companies extends BaseTest {
+
+
     CompaniesPage companiesPage;
     Company company;
+
 
 
     @Given("openBrowserAndLogin")

@@ -15,23 +15,23 @@ public class BaseTest {
     protected BrowsersService browsersService;
     protected CompanySteps companySteps;
 
-    @BeforeClass
-    public void setUp() {
-        SelenideLogger.addListener("AllureSelenide", new AllureSelenide()
-        .screenshots(true)
-        .savePageSource(true));
-
-        browsersService = new BrowsersService();
-        companySteps = new CompanySteps();
-
-    }
-
-    @AfterTest
-    public void drop() {
-
-        Selenide.closeWebDriver();
-
-    }
-
+//    @BeforeClass
+//    public void setUp() {
+//        SelenideLogger.addListener("AllureSelenide", new AllureSelenide()
+//        .screenshots(true)
+//        .savePageSource(true));
+//
+//        browsersService = new BrowsersService();
+//        companySteps = new CompanySteps();
+//
+//    }
+//
+//    @AfterTest
+//    public void drop() {
+//
+//        Selenide.closeWebDriver();
+//
+//    }
+//
 
 }
