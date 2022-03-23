@@ -13,7 +13,7 @@ import page.LoginRegistrationPage;
 import steps.CompanySteps;
 
 
-public class Companies extends BaseTest {
+public class CompaniesCucumberDef extends BaseTest {
 
 
     CompaniesPage companiesPage;

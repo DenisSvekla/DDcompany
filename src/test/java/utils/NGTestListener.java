@@ -4,9 +4,7 @@ import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
 
-
 public class NGTestListener implements ITestListener {
-
     @Override
     public void onTestStart(ITestResult iTestResult) {
         System.out.println("On test start");
@@ -14,13 +12,12 @@ public class NGTestListener implements ITestListener {
 
     @Override
     public void onTestSuccess(ITestResult iTestResult) {
-
         System.out.println("On test Success");
     }
 
     @Override
     public void onTestFailure(ITestResult iTestResult) {
-        System.out.println("On test failure");
+        System.out.println("On Test Failure");
     }
 
     @Override

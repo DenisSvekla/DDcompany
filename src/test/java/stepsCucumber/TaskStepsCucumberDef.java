@@ -8,7 +8,7 @@ import page.ChangeTaskPage;
 import page.ProfilePage;
 import utils.Randomization;
 
-public class TaskStepsCucumber extends BaseTest {
+public class TaskStepsCucumberDef extends BaseTest {
     ChangeTaskPage changeTaskPage;
 
     @Given("openTask")

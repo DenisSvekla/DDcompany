@@ -9,9 +9,15 @@ import page.ProfilePage;
 
 import java.io.File;
 
-public class ProfileStepsCucumber extends BaseTest {
+public class ProfileStepsCucumberDef extends BaseTest {
 
     ProfilePage profilePage;
+
+    @Given("openBrowserAndLogins")
+    public void openBrowserAndLogin() {
+        LoginRegistrationPage loginRegistrationPage = new LoginRegistrationPage(true);
+        loginRegistrationPage.loginUser(ReadProperties.getEmail(), ReadProperties.getPassword());
+    }
 
     @Given("openProfile")
     public void openProfile() {
