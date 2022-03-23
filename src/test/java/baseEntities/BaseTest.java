@@ -8,7 +8,6 @@ import core.BrowsersService;
 import io.qameta.allure.selenide.AllureSelenide;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeTest;
 import steps.CompanySteps;
 
 public class BaseTest {
