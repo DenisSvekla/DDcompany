@@ -21,41 +21,41 @@ import java.io.File;
 import static com.codeborne.selenide.Selenide.*;
 
 public class TestForChecked extends BaseTest {
-    Company company;
-    Task user;
-
-
-    @Test
-    @Issue("1-bag-1")
-    @Description("asdsada")
-    public void test() {
-        setUps();
-        LoginRegistrationPage loginRegistrationPage = new LoginRegistrationPage(true);
-        loginRegistrationPage.getEmailFieldLogin().val(ReadProperties.getEmail());
-        loginRegistrationPage.getPasswordFieldLogin().val(ReadProperties.getPassword());
-        loginRegistrationPage.getLoginButton().click();
-        CompaniesPage companiesPage = new CompaniesPage(true);
-        companiesPage.getAddCompanyButton().click();
-        CompanySteps companySteps = new CompanySteps();
-        companySteps.addCompany(company);
-        companySteps.deleteCompany(company);
-        ProfilePage profilePage = new ProfilePage(true);
-        profilePage.getSelectFileButton().uploadFile(new File("src/test/resources/111.jpg"));
-        profilePage.getSaveButton().click();
-        profilePage.getSaveButton().shouldNotBe(Condition.visible);
-    }
-
-    public void setUps () {
-      //  $("input#fileupload").uploadFile(new File("src\\test\\resources\\files\\smile.png"));
-        // $("input#fileupload").uploadFile(new File("src\\test\\resources\\files\\smile.png"));
-        company = Company.builder()
-                .name("ыфвdasdфыв")
-                .INN("123456789012")
-                .OGRN("1234567890123")
-                .KPP("asdfghfff")
-                .phone("123123")
-                .address("dfredfrtgg123")
-                .build();
-
-    }
+//    Company company;
+//    Task user;
+//
+//
+//    @Test
+//    @Issue("1-bag-1")
+//    @Description("asdsada")
+//    public void test() {
+//        setUps();
+//        LoginRegistrationPage loginRegistrationPage = new LoginRegistrationPage(true);
+//        loginRegistrationPage.getEmailFieldLogin().val(ReadProperties.getEmail());
+//        loginRegistrationPage.getPasswordFieldLogin().val(ReadProperties.getPassword());
+//        loginRegistrationPage.getLoginButton().click();
+//        CompaniesPage companiesPage = new CompaniesPage(true);
+//        companiesPage.getAddCompanyButton().click();
+//        CompanySteps companySteps = new CompanySteps();
+//        companySteps.addCompany(company);
+//        companySteps.deleteCompany(company);
+//        ProfilePage profilePage = new ProfilePage(true);
+//        profilePage.getSelectFileButton().uploadFile(new File("src/test/resources/111.jpg"));
+//        profilePage.getSaveButton().click();
+//        profilePage.getSaveButton().shouldNotBe(Condition.visible);
+//    }
+//
+//    public void setUps () {
+//      //  $("input#fileupload").uploadFile(new File("src\\test\\resources\\files\\smile.png"));
+//        // $("input#fileupload").uploadFile(new File("src\\test\\resources\\files\\smile.png"));
+//        company = Company.builder()
+//                .name("ыфвdasdфыв")
+//                .INN("123456789012")
+//                .OGRN("1234567890123")
+//                .KPP("asdfghfff")
+//                .phone("123123")
+//                .address("dfredfrtgg123")
+//                .build();
+//
+//    }
 }

@@ -56,7 +56,7 @@ public class CompaniesCucumberDef extends BaseTest {
     }
 
     @Then("onCompaniesPageNotDisplayCompany")
-    public void oncompaniesPageNotDisplayCompany() {
+    public void onCompaniesPageNotDisplayCompany() {
         companiesPage.getAnyNameCompany(company.getName()).shouldNotBe(Condition.visible);
     }
 
