@@ -7,20 +7,17 @@ import io.qameta.allure.Description;
 import io.qameta.allure.Issue;
 import models.Company;
 import models.Task;
-import org.openqa.selenium.By;
-import org.testng.Assert;
+import models.TaskB;
 import org.testng.annotations.Test;
-import page.CompaniesPage;
-import page.LoginRegistrationPage;
-import page.ProfilePage;
+import page.*;
+import steps.CompanySteps;
 
 import java.io.File;
 
-import static com.codeborne.selenide.Selenide.*;
-
 public class TestForChecked extends BaseTest {
     Company company;
-    Task user;
+    TaskB user;
+    Task task;
 
 
     @Test
@@ -29,18 +26,21 @@ public class TestForChecked extends BaseTest {
     public void test() {
         setUps();
         LoginRegistrationPage loginRegistrationPage = new LoginRegistrationPage(true);
-        $(By.name("login")).shouldBe(Condition.visible);
         loginRegistrationPage.getEmailFieldLogin().val(ReadProperties.getEmail());
         loginRegistrationPage.getPasswordFieldLogin().val(ReadProperties.getPassword());
         loginRegistrationPage.getLoginButton().click();
         CompaniesPage companiesPage = new CompaniesPage(true);
         companiesPage.getAddCompanyButton().click();
+        CompanySteps companySteps = new CompanySteps();
         companySteps.addCompany(company);
         companySteps.deleteCompany(company);
+        companiesPage.getAnyNameCompany(company.getName()).shouldNotBe(Condition.visible);
         ProfilePage profilePage = new ProfilePage(true);
         profilePage.getSelectFileButton().uploadFile(new File("src/test/resources/111.jpg"));
         profilePage.getSaveButton().click();
-        profilePage.getSaveButton().shouldNotBe(Condition.visible);
+
+
+
     }
 
     public void setUps () {
@@ -53,6 +53,10 @@ public class TestForChecked extends BaseTest {
                 .KPP("asdfghfff")
                 .phone("123123")
                 .address("dfredfrtgg123")
+                .build();
+        task = Task.builder()
+                .nameTask("ddd")
+                .descriptionTask("asdad")
                 .build();
 
     }

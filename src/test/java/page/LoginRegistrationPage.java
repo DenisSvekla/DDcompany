@@ -2,6 +2,7 @@ package page;
 
 import baseEntities.BasePage;
 import com.codeborne.selenide.SelenideElement;
+import core.ReadProperties;
 import org.openqa.selenium.By;
 import utils.UIEndpoints;
 
@@ -12,7 +13,7 @@ public class LoginRegistrationPage extends BasePage {
 
     private By EMAIL_FIELD_LOGIN = By.name("login");
     private By PASSWORD_FIELD_LOGIN = By.name("password");
-    private By LOGIN_BUTTON = By.cssSelector("input[value='Авторизоваться']");
+    private By LOGIN_BUTTON = By.xpath("(//*[@class = 'btn btn-danger'])[1]");
 
 
 
@@ -31,10 +32,6 @@ public class LoginRegistrationPage extends BasePage {
     }
 
 
-    @Override
-    protected boolean isPageOpened() {
-        return false;
-    }
 
     public SelenideElement getEmailFieldLogin () {return $(EMAIL_FIELD_LOGIN);}
     public SelenideElement getPasswordFieldLogin () {return $(PASSWORD_FIELD_LOGIN);}
@@ -45,4 +42,11 @@ public class LoginRegistrationPage extends BasePage {
     public SelenideElement getAnyNameCompany(String nameCompany) {
         return $(By.xpath("//*[@class='/companys/view/' and text()='"+ nameCompany + "']"));
     }
+
+    public void loginUser(String email, String password) {
+        getEmailFieldLogin().val(email);
+        getPasswordFieldLogin().val(password);
+        getLoginButton().click();
+    }
+
 }

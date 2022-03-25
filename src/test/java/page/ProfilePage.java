@@ -15,6 +15,8 @@ public class ProfilePage extends BasePage {
 
     private By SELECT_FILE_BUTTON = By.name("avatar");
     private By SAVE_BUTTON = By.name("act_profile_now");
+    private By EMAIL_BUTTON = By.xpath("//a[text()='llolloibibrippa-6119@yopmail.com']");
+    private By DEFAULT_IMAGE = By.cssSelector("img[src='/tmp/default_avatar.jpg']");
 
     public ProfilePage() {
         super(false);
@@ -30,10 +32,7 @@ public class ProfilePage extends BasePage {
         open(UIEndpoints.GET_PROFILE_USER);
     }
 
-    @Override
-    protected boolean isPageOpened() {
-        return false;
-    }
+
 
     public SelenideElement getSelectFileButton() {
         return $(SELECT_FILE_BUTTON);
@@ -41,4 +40,6 @@ public class ProfilePage extends BasePage {
     public SelenideElement getSaveButton() {
         return $(SAVE_BUTTON);
     }
+    public SelenideElement getEmailButton() {return $(EMAIL_BUTTON);}
+    public SelenideElement getDefaultImg() {return $(DEFAULT_IMAGE);}
 }
