@@ -1,8 +1,11 @@
 package utils;
 
+import java.net.URI;
+
 public class ApiEndpoint {
 
     public static final String GET_Booking_ID = "/booking";
-    public static final String GET_ADD_COMPANY = "/tasks/rest/createcompany";
-    public static final String GET_DO_REGISTER = "/tasks/rest/doregister ";
+    public static final String GET_BOOK_ON_ID = "/booking/{id}";
+    public static final String BOOKING = "/booking";
+
 }
