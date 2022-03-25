@@ -19,6 +19,10 @@ public class ReadProperties {
 
 
     public static String getUrl () { return properties.getProperty("url");}
+    public static String getUrlApi () { return properties.getProperty("urlApi");}
+    public static String getUserNameForApi () { return properties.getProperty("usernameapi");}
+    public static String getPasswordForApi () { return properties.getProperty("passwordapi");}
+
 
     public static String getUserName () { return properties.getProperty("username");}
 
