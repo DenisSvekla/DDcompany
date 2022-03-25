@@ -8,9 +8,14 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import models.Company;
+import page.AddCompanyPage;
+import page.ChangeCompanyPage;
 import page.CompaniesPage;
 import page.LoginRegistrationPage;
 import steps.CompanySteps;
+import utils.Randomization;
+
+import static com.codeborne.selenide.Selenide.sleep;
 
 
 public class CompaniesCucumberDef extends BaseTest {
@@ -57,18 +62,59 @@ public class CompaniesCucumberDef extends BaseTest {
 
     @Then("onCompaniesPageNotDisplayCompany")
     public void onCompaniesPageNotDisplayCompany() {
+        companiesPage = new CompaniesPage(true);
         companiesPage.getAnyNameCompany(company.getName()).shouldNotBe(Condition.visible);
+
     }
+
+    @When("open company and change name Company {string}")
+    public void openCompanyAndChangeNameCompany(String nameCompany) {
+        companiesPage = new CompaniesPage(true);
+        companiesPage.getChangeCompanyButton().click();
+        ChangeCompanyPage changeCompanyPage = new ChangeCompanyPage(false);
+        changeCompanyPage.getNameCompanyField().clear();
+        changeCompanyPage.getNameCompanyField().val(nameCompany);
+        changeCompanyPage.getChangeCompanyBuild().click();
+
+    }
+
+    @And("onTaskPage Successful Message is Displayed")
+    public void onTaskPageSuccessfulMessageIsDisplayed() {
+        companiesPage.getSuccesfullMessage().shouldBe(Condition.visible);
+
+    }
+    @Then("nameCompany is {string}")
+    public void nameCompanyIs(String name) {
+        companiesPage.getAnyNameCompany(name).shouldBe(Condition.visible);
+    }
+
+
+    @And("in field OGRN enter incorrect value")
+    public void inFieldOGRNEnterIncorrectValue() {
+        AddCompanyPage addCompanyPage = new AddCompanyPage(false);
+        addCompanyPage.getNameCompanyField().val(Randomization.getRandomString(9));
+        addCompanyPage.getOgrnField().val(Randomization.getRandomString(2));
+        addCompanyPage.getAddCompanyButton().click();
+    }
+
+    @Then("get an informational error message")
+    public void getAnInformationalErrorMessage() {
+
+        companiesPage.getSuccesfullMessage().shouldBe(Condition.visible);
+    }
+
 
     public void setUps () {
         company = models.Company.builder()
                 .name("Deniska")
                 .INN("123456789012")
                 .OGRN("1234567890123")
-                .KPP("asdfghfff")
+                .KPP(Randomization.getRandomString(9))
                 .phone("123123")
                 .address("dfredfrtgg123")
                 .build();
 
     }
+
+
 }

@@ -1,8 +1,10 @@
 package stepsCucumber;
 
 import baseEntities.BaseTest;
+import com.codeborne.selenide.Condition;
 import core.ReadProperties;
 import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import page.LoginRegistrationPage;
 import page.ProfilePage;
@@ -29,5 +31,12 @@ public class ProfileStepsCucumberDef extends BaseTest {
     public void selectfileinformandclicksavebutton() {
         profilePage.getSelectFileButton().uploadFile(new File("src/test/resources/111.jpg"));
         profilePage.getSaveButton().click();
+    }
+
+    @Then("newFileUploaded")
+    public void newFileUploaded() {
+        profilePage.getEmailButton().click();
+        profilePage.getDefaultImg().shouldNotBe(Condition.visible);
+
     }
 }

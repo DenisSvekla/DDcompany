@@ -1,17 +1,14 @@
 Feature: checking for limit values name task field test and popup
 
   Background:
-    Given openTasks
-    And createTasks
+    Given openBrowserAndLogin
 
-
-  Scenario Outline: checking for limit values name task (min value, max)
-    Given openTasksForEdit
-    When nameTask"<nametask>"
-    Then nameTask is "<visibletask>"
+  Scenario Outline: checking for limit values name Company (min value, max)
+    When open company and change name Company "<namecompany>"
+    Then nameCompany is "<visiblecompany>"
     And onTaskPage Successful Message is Displayed
     Examples:
-      | nametask                            | visibletask                         |
+      | namecompany                         | visiblecompany                      |
       | Rar                                 | Rar                                 |
       | checking for limit values name task | checking for limit values name task |
 
