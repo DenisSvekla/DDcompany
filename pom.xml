@@ -74,7 +74,7 @@
         <dependency>
             <groupId>io.cucumber</groupId>
             <artifactId>cucumber-picocontainer</artifactId>
-            <version>6.5.1</version>
+            <version>7.2.2</version>
         </dependency>
 
         <dependency>
@@ -99,7 +99,7 @@
                     <forkCount>2</forkCount>
                     <reuseForks>true</reuseForks>
                     <useSystemClassLoader>false</useSystemClassLoader>
-                    <!--suiteXmlFiles>${suiteXmlFile}</suiteXmlFiles-->
+                    <suiteXmlFiles>${suiteXmlFile}</suiteXmlFiles>
                     <argLine>
                         -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
                     </argLine>
