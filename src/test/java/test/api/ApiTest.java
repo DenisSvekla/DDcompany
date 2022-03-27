@@ -12,11 +12,12 @@ import static io.restassured.RestAssured.given;
 
 public class ApiTest extends BaseApiTest {
 
+
     @Test
-    public void asdasd() {
+    public void getAllBooking() {
         given()
                 .when()
-                .get(ApiEndpoint.GET_Booking_ID)
+                .get(ApiEndpoint.BOOKING)
                 .then()
                 .log().status()
                 .log().body()
@@ -35,7 +36,7 @@ public class ApiTest extends BaseApiTest {
     }
 
     @Test
-    public void getBookById1() {
+    public void getBookByincorrectId() {
         given()
                 .pathParam("id", 5000)
                 .get(ApiEndpoint.GET_BOOK_ON_ID)
@@ -44,14 +45,15 @@ public class ApiTest extends BaseApiTest {
                 .log().body()
                 .statusCode(HttpStatus.SC_NOT_FOUND);
     }
+
     @Test
-    public void successfulCreateUser() {
-        Map<String, Object> book =  new HashMap<>();
+    public void successfulCreateBooking() {
+        Map<String, Object> book = new HashMap<>();
         book.put("firstname", "bla bla");
         book.put("lastname", "Оddd");
-        book.put("totalprice",22);
-        book.put("depositpaid",false);
-        book.put("additionalneeds","want create");
+        book.put("totalprice", 22);
+        book.put("depositpaid", false);
+        book.put("additionalneeds", "want create");
 
         given()
                 .body(book)

@@ -29,4 +29,5 @@ public class ChangeCompanyPage extends BasePage {
 
     public SelenideElement getNameCompanyField () {return $(NAME_COMPANY_FIELD);}
     public SelenideElement getChangeCompanyBuild () {return $(CHANGE_COMPANY_BUTTON);}
+
 }

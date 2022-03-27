@@ -2,7 +2,7 @@ package page;
 
 import baseEntities.BasePage;
 import com.codeborne.selenide.SelenideElement;
-import models.Task;
+
 import org.openqa.selenium.By;
 import utils.UIEndpoints;
 
@@ -12,7 +12,6 @@ import static com.codeborne.selenide.Selenide.open;
 public class TaskPage extends BasePage {
 
     private By ADD_TASK_PAGE = By.cssSelector("a[href='tasks/add.html']");
-
 
 
     public TaskPage() {

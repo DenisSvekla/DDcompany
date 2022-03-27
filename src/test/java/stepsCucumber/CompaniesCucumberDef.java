@@ -15,15 +15,12 @@ import page.LoginRegistrationPage;
 import steps.CompanySteps;
 import utils.Randomization;
 
-import static com.codeborne.selenide.Selenide.sleep;
-
 
 public class CompaniesCucumberDef extends BaseTest {
 
 
     CompaniesPage companiesPage;
     Company company;
-
 
 
     @Given("openBrowserAndLogin")
@@ -62,7 +59,8 @@ public class CompaniesCucumberDef extends BaseTest {
 
     @Then("onCompaniesPageNotDisplayCompany")
     public void onCompaniesPageNotDisplayCompany() {
-        companiesPage = new CompaniesPage(true);
+        setUps();
+        companiesPage = new CompaniesPage(false);
         companiesPage.getAnyNameCompany(company.getName()).shouldNotBe(Condition.visible);
 
     }
@@ -83,6 +81,7 @@ public class CompaniesCucumberDef extends BaseTest {
         companiesPage.getSuccesfullMessage().shouldBe(Condition.visible);
 
     }
+
     @Then("nameCompany is {string}")
     public void nameCompanyIs(String name) {
         companiesPage.getAnyNameCompany(name).shouldBe(Condition.visible);
@@ -100,11 +99,12 @@ public class CompaniesCucumberDef extends BaseTest {
     @Then("get an informational error message")
     public void getAnInformationalErrorMessage() {
 
-        companiesPage.getSuccesfullMessage().shouldBe(Condition.visible);
+        companiesPage.getAddCompanyButton().shouldBe(Condition.visible);
+
     }
 
 
-    public void setUps () {
+    public void setUps() {
         company = models.Company.builder()
                 .name("Deniska")
                 .INN("123456789012")

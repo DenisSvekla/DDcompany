@@ -3,8 +3,6 @@ package core;
 import com.codeborne.selenide.Configuration;
 
 
-
-
 public class BrowsersService {
 
     protected static final String url = ReadProperties.getUrl();
@@ -18,7 +16,6 @@ public class BrowsersService {
             case "chrome":
                 Configuration.baseUrl = url;
                 Configuration.browser = "chrome";
-                //Configuration.startMaximized = false;
                 Configuration.fastSetValue = true;
                 Configuration.headless = false;
                 Configuration.timeout = 8000;
@@ -36,12 +33,4 @@ public class BrowsersService {
 
     }
 
-//
-//    Configuration.baseUrl = ReadProperties.getUrl();
-//    Configuration.browser = ReadProperties.getBrowserName();
-//    Configuration.startMaximized = false;
-//    Configuration.fastSetValue = true;
-//    Configuration.headless = false;
-//    Configuration.timeout = 8000;
-//    open("/");
 }
