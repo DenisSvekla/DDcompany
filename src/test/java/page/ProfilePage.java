@@ -12,7 +12,7 @@ public class ProfilePage extends BasePage {
 
     private By SELECT_FILE_BUTTON = By.name("avatar");
     private By SAVE_BUTTON = By.name("act_profile_now");
-    private By EMAIL_BUTTON = By.xpath("//a[text()='llolloibibrippa-6119@yopmail.com']");
+    private By EMAIL_BUTTON = By.xpath("//a[text()='lllolloibibrippa-6119@yopmail.com']");
     private By DEFAULT_IMAGE = By.cssSelector("img[src='/tmp/default_avatar.jpg']");
 
     public ProfilePage() {

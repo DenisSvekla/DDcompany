@@ -1,6 +1,6 @@
 package steps;
 
-import io.qameta.allure.Step;
+
 import models.Company;
 import page.AddCompanyPage;
 import page.CompaniesPage;

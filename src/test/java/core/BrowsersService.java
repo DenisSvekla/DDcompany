@@ -16,6 +16,7 @@ public class BrowsersService {
             case "chrome":
                 Configuration.baseUrl = url;
                 Configuration.browser = "chrome";
+                Configuration.browserSize = "1800x1000";
                 Configuration.fastSetValue = true;
                 Configuration.headless = false;
                 Configuration.timeout = 8000;
