@@ -12,7 +12,7 @@ public class CompanySteps  {
 
 
     public CompaniesPage addCompany (Company company) {
-        addCompanyPage = new AddCompanyPage(false);
+        addCompanyPage = new AddCompanyPage(true);
         addCompanyPage.getNameCompanyField().val(company.getName());
         addCompanyPage.getInnField().val(company.getINN());
         addCompanyPage.getOgrnField().val(company.getOGRN());

@@ -11,7 +11,9 @@ public class TaskB {
         public static class Builder {
             private TaskB newTask;
 
-            public Builder() {newTask = new TaskB();}
+            public Builder() {
+                newTask = new TaskB();
+            }
 
             public Builder withNameTask(String nameTask) {
                 newTask.nameTask = nameTask;

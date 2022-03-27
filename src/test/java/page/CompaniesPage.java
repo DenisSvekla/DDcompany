@@ -18,9 +18,6 @@ public class CompaniesPage extends BasePage {
     private By SUCCESFULL_MESSAGE = By.cssSelector("div[class='alert in fade alert-success']");
 
 
-
-
-
     public CompaniesPage() {
         super(false);
     }
@@ -32,7 +29,6 @@ public class CompaniesPage extends BasePage {
     @Override
     protected void openPage() {
         open(UIEndpoints.GET_ALL_COMPANY);
-
     }
 
 
@@ -41,15 +37,10 @@ public class CompaniesPage extends BasePage {
     public SelenideElement getDeleteCompanyButton () { return $(DELETE_COMPANY_BUTTOdN);}
     public SelenideElement getChangeCompanyButton () { return $(CHANGE_COMPANY_BUTTOD);}
     public SelenideElement getSuccesfullMessage () { return $(SUCCESFULL_MESSAGE);}
-
     public SelenideElement getAnyNameCompany(String nameCompany) {
-        return $(By.xpath("//*[contains(@href, '/companys/view/') and text()='"+ nameCompany +"']"));
-
-        }
+        return $(By.xpath("//*[contains(@href, '/companys/view/') and text()='"+ nameCompany +"']")); }
     public SelenideElement getDeleteCompanyButton (String nameCompany) {
-        return $(By.xpath("//*[contains(@href, '/companys/view/') and text()='"+ nameCompany +"']//parent::ins/../../td/a[text()='Удалить']"));
-
-        }
+        return $(By.xpath("//*[contains(@href, '/companys/view/') and text()='"+ nameCompany +"']//parent::ins/../../td/a[text()='Удалить']")); }
 
     }
 

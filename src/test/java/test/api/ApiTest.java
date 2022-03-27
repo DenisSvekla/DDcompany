@@ -12,53 +12,55 @@ import static io.restassured.RestAssured.given;
 
 public class ApiTest extends BaseApiTest {
 
-//    @Test
-//    public void asdasd() {
-//        given()
-//                .when()
-//                .get(ApiEndpoint.GET_Booking_ID)
-//                .then()
-//                .log().status()
-//                .log().body()
-//                .statusCode(HttpStatus.SC_OK);
-//    }
-//
-//    @Test
-//    public void getBookById() {
-//        given()
-//                .pathParam("id", 1)
-//                .get(ApiEndpoint.GET_BOOK_ON_ID)
-//                .then()
-//                .log().status()
-//                .log().body()
-//                .statusCode(HttpStatus.SC_OK);
-//    }
-//
-//    @Test
-//    public void getBookById1() {
-//        given()
-//                .pathParam("id", 5000)
-//                .get(ApiEndpoint.GET_BOOK_ON_ID)
-//                .then()
-//                .log().status()
-//                .log().body()
-//                .statusCode(HttpStatus.SC_NOT_FOUND);
-//    }
-//    @Test
-//    public void successfulCreateUser() {
-//        Map<String, Object> book =  new HashMap<>();
-//        book.put("firstname", "bla bla");
-//        book.put("lastname", "Оddd");
-//        book.put("totalprice",22);
-//        book.put("depositpaid",false);
-//        book.put("additionalneeds","want create");
-//
-//        given()
-//                .body(book)
-//                .log().body()
-//                .when()
-//                .post(ApiEndpoint.BOOKING)
-//                .then().log().body()
-//                .statusCode(HttpStatus.SC_INTERNAL_SERVER_ERROR);
-//    }
+
+    @Test
+    public void getAllBooking() {
+        given()
+                .when()
+                .get(ApiEndpoint.BOOKING)
+                .then()
+                .log().status()
+                .log().body()
+                .statusCode(HttpStatus.SC_OK);
+    }
+
+    @Test
+    public void getBookById() {
+        given()
+                .pathParam("id", 1)
+                .get(ApiEndpoint.GET_BOOK_ON_ID)
+                .then()
+                .log().status()
+                .log().body()
+                .statusCode(HttpStatus.SC_OK);
+    }
+
+    @Test
+    public void getBookByincorrectId() {
+        given()
+                .pathParam("id", 5000)
+                .get(ApiEndpoint.GET_BOOK_ON_ID)
+                .then()
+                .log().status()
+                .log().body()
+                .statusCode(HttpStatus.SC_NOT_FOUND);
+    }
+
+    @Test
+    public void successfulCreateBooking() {
+        Map<String, Object> book = new HashMap<>();
+        book.put("firstname", "bla bla");
+        book.put("lastname", "Оddd");
+        book.put("totalprice", 22);
+        book.put("depositpaid", false);
+        book.put("additionalneeds", "want create");
+
+        given()
+                .body(book)
+                .log().body()
+                .when()
+                .post(ApiEndpoint.BOOKING)
+                .then().log().body()
+                .statusCode(HttpStatus.SC_INTERNAL_SERVER_ERROR);
+    }
 }
