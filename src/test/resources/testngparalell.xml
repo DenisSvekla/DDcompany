@@ -12,6 +12,10 @@
     <test name="Complete Apitest run">
         <classes>
             <class name="test.api.ApiTest"/>
+        </classes>
+    </test>
+    <test name="Complete ApitestWithDataBase run">
+        <classes>
             <class name="test.api.ApiTestWithDataBase"/>
         </classes>
     </test>

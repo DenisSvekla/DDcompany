@@ -7,10 +7,8 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import io.qameta.allure.Issue;
 import io.qameta.allure.Step;
 import models.Company;
-import org.testng.Assert;
 import page.AddCompanyPage;
 import page.ChangeCompanyPage;
 import page.CompaniesPage;
@@ -54,6 +52,7 @@ public class CompaniesCucumberDef extends BaseTest {
         companiesPage = new CompaniesPage(false);
         companiesPage.getAnyNameCompany("Deniska").shouldBe(Condition.visible);
     }
+
     @Step
     @When("deleteCompany")
     public void deleteCompany() {
@@ -61,6 +60,7 @@ public class CompaniesCucumberDef extends BaseTest {
         companiesPage.getDeleteCompanyButton().click();
 
     }
+
     @Step
     @Then("onCompaniesPageNotDisplayCompany")
     public void onCompaniesPageNotDisplayCompany() {
@@ -70,6 +70,7 @@ public class CompaniesCucumberDef extends BaseTest {
         companiesPage.getAnyNameCompany(company.getName()).shouldNotBe(Condition.visible);
 
     }
+
     @Step
     @When("open company and change name Company {string}")
     public void openCompanyAndChangeNameCompany(String nameCompany) {
@@ -81,12 +82,14 @@ public class CompaniesCucumberDef extends BaseTest {
         changeCompanyPage.getChangeCompanyBuild().click();
 
     }
+
     @Step
     @And("onTaskPage Successful Message is Displayed")
     public void onTaskPageSuccessfulMessageIsDisplayed() {
         companiesPage.getSuccesfullMessage().shouldBe(Condition.visible);
 
     }
+
     @Step
     @Then("nameCompany is {string}")
     public void nameCompanyIs(String name) {
@@ -106,7 +109,7 @@ public class CompaniesCucumberDef extends BaseTest {
     @Then("get an informational error message")
     public void getAnInformationalErrorMessage() {
 
-       Assert.assertTrue(false);
+        companiesPage.getAddCompanyButton().shouldBe(Condition.visible);
 
     }
 
